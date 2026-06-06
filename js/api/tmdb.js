@@ -1,4 +1,4 @@
-const TMDB_API_KEY = "YOUR_TMDB_KEY";
+const TMDB_API_KEY = "85a2b1e389282d6e91dc4aa2bf44f9e1";
 
 export async function getTrendingMovies() {
 
