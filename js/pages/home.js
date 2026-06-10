@@ -1,4 +1,7 @@
-import { searchGames }
+import {
+    getTrendingGames,
+    searchGames
+}
 from "../api/rawg.js";
 
 import {
