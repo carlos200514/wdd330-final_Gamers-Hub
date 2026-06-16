@@ -9,32 +9,35 @@ export function createFavoriteButton(item, type) {
 
     const button =
         document.createElement("button");
-    const favorite =
-        isFavorite(item.id, type);
-    button.textContent =
-        favorite
-            ? "★ Remove Favorite"
-            : "☆ Add Favorite";
+    button.className =
+        "favorite-button";
+    updateButton();
+
     button.addEventListener(
         "click",
-        () => {
+        (event) => {
+            event.stopPropagation();
             if (isFavorite(item.id, type)) {
                 removeFavorite(
                     item.id,
                     type
                 );
-                button.textContent =
-                    "☆ Add Favorite";
             }
             else {
                 saveFavorite(
                     item,
                     type
                 );
-                button.textContent =
-                    "★ Remove Favorite";
             }
+            updateButton();
         }
     );
+
+    function updateButton() {
+        button.textContent =
+            isFavorite(item.id, type)
+                ? "★"
+                : "☆";
+    }
     return button;
 }
