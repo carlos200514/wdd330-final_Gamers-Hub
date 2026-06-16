@@ -1,2 +1,27 @@
-import "./pages/home.js";
-console.log("Gamer's Entertainment Hub Started");
+export function loadTheme() {
+    const theme =
+        localStorage.getItem(
+            "theme"
+        );
+    if (theme === "dark") {
+        document.body.classList.add(
+            "dark"
+        );
+    }
+}
+
+export function toggleTheme() {
+    document.body.classList.toggle(
+        "dark"
+    );
+    const dark =
+        document.body.classList.contains(
+            "dark"
+        );
+    localStorage.setItem(
+        "theme",
+        dark
+            ? "dark"
+            : "light"
+    );
+}

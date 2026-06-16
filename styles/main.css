@@ -86,7 +86,7 @@ section h2 {
     cursor: pointer;
     box-shadow: 0 4px 8px #0000001a;
     transition: transform .3s ease,
-                box-shadow .3s ease;
+        box-shadow .3s ease;
 }
 
 .card:hover {
@@ -161,6 +161,46 @@ button:hover {
     font-size: 1.2rem;
 }
 
+body.dark {
+    --background: #111827;
+    --text: #ffffff;
+}
+
+body.dark .card {
+    background: #1F2937;
+    color: #ffffff;
+}
+
+body.dark input {
+    background: #374151;
+    color: #ffffff;
+}
+
+.card {
+    animation:
+        fadeIn .5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+button,
+.card,
+a {
+    outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -175,7 +215,7 @@ button:hover {
 
     .card-container {
         grid-template-columns:
-        repeat(2, 1fr);
+            repeat(2, 1fr);
     }
 }
 
