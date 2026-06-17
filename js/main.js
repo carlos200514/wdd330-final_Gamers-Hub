@@ -1,3 +1,5 @@
+import "./pages/home.js";
+
 export function loadTheme() {
     const theme =
         localStorage.getItem(
@@ -23,5 +25,18 @@ export function toggleTheme() {
         dark
             ? "dark"
             : "light"
+    );
+}
+
+loadTheme();
+
+const themeButton =
+    document.getElementById(
+        "theme-toggle"
+    );
+if (themeButton) {
+    themeButton.addEventListener(
+        "click",
+        toggleTheme
     );
 }
